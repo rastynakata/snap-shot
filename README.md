@@ -1,5 +1,28 @@
 snap-shot
 =========
+#!/bin/bash
+# - NAME:
+#    snap - output system statistics.
+#
+# - SYNOPSIS:
+#    snap [-h]
+#
+# - DESCRIPTION:
+#    snap outputs overall statistics of the system it is being run on and the
+#    date and time it is running, the system 1, 5, 15 minutes load averages, the
+#    current % use of the CPU. If there are multiple CPUs, this is the average
+#    % use and is any use except idle. All data are based on the output of the
+#    top command.
+#
+# - OPTION(S):
+#    -h        In addition of the overall system statistics, snap outputs
+#              information about the 5 processes that are using the largest
+#              proportion of two valuable system resources: the 5 processes
+#              that are currently using the most memory (measured by run-set
+#              -size), and the 5 processes that are currently using the
+#              highest percentage of the CPU.
+#
+
 tmpfile1=$(mktemp /tmp/top.out.XXXX)
 tmpfile2=$(mktemp /tmp/procs.XXXX)
 tmpfile3=$(mktemp /tmp/procs1.XXXX)
